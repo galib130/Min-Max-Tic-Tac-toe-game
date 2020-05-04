@@ -15,11 +15,11 @@ h1
 {
   width: 400px;
   height: 400px;
-  margin-left: 35%;
-  margin-right: 50%;
-  /* margin-bottom: 60%; */
-  /* margin-top: 5%; */
+  /* position:absolute; */
+  margin-left: auto;
+  margin-right: auto;
   border-color: blue;
+  /* border-radius: 30px; */
 
 }
 #im2,#im1,#im3,#im4,#im5,#im6,#im7,#im8,#im9,#im11,#im12,#im13,#im14,#im15,#im16,#im17,#im18,#im19
@@ -62,19 +62,20 @@ section
 }
 
 #Red,#Blue{
-  visibility:visible;
-  margin-left: 42%;
+  visibility:hidden;
+  margin-left: 45%;
   margin-right: 30%;
   /* margin-right: 50%; */
   /* margin-bottom: 1%; */
   /* margin-top: -860px; */
-  font-size:2vw;
+  font-size:30px;
   /* text-align: center; */
-  height: 20%;
+  /* height: 20%; */
 
   color: red;
+  position: relative;
 
-  font-stretch: expanded;
+  /* font-stretch: expanded; */
 
   /* margin-top: -860px; */
   /* padding: 3% 3%; */
@@ -90,11 +91,11 @@ section
 
 #button1
 {
-  margin-left: 42%;
-  margin-right: 2%;
+  margin-left: 43.5%;
+  /* margin-right: 50%; */
   font-size: 25px;
 text-align: center;
-  width: 200px;
+  width: 25vh;
   height:50px;
   background-color: turquoise;
   border-radius: 30px;
@@ -107,6 +108,7 @@ text-align: center;
   /* margin-top: 20px; */
   padding-top: 20px;
   word-spacing: 850px;
+
 }
 
 .score1
@@ -125,3 +127,4 @@ text-align: center;
   /* margin-top: 20px; */
   /* padding-top: -20px; */
 } */
+html,body { -webkit-text-size-adjust:none; }
