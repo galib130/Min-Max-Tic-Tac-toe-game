@@ -4,6 +4,9 @@
 // var head3=document.querySelector("#pick3")
 
 var player=document.getElementById("crowd");
+player.preload="auto";
+player.currentTime=0.1;
+player.volume=0.8;
 // player.loop="true";
 
 
@@ -87,7 +90,9 @@ function result(c)
     {
       if(c==3){console.log("red wins");
       r1.style.color="red";
-      r1.style.marginLeft="42%";
+      r1.style.marginLeft="44%";
+      // r1.style.marginRight=auto;
+
       r1.textContent="HTML WINS" //1 second
 
       var delayInMilliseconds = 3000;
@@ -96,10 +101,10 @@ setTimeout(function() {
 
 var vic=document.querySelector("#victory");
 // r1.style.marginRight="40%";
-r1.style.marginLeft="38%";
+r1.style.marginLeft="40%";
   r1.textContent="FLAWLESS VICTORY";
 }, delayInMilliseconds);
-var seconds = 12000;
+var seconds = 4000;
 setTimeout(function() {
 //your code to be executed after 1 second
 
@@ -116,17 +121,23 @@ vic.play();
       else if(c==4)
       {console.log("blue wins");
 r1.style.color="blue";
-  r1.style.marginLeft="43%";
+  r1.style.marginLeft="45%";
+
+  r1.style.marginRight="30%";
+  // r1.style.fontSize="2vw"
       r1.textContent="CSS WINS";
 var vic=document.querySelector("#victory");
       var delayInMilliseconds = 3000;
       setTimeout(function() {
         //your code to be executed after 1 second
-          r1.style.marginLeft="38%";
+          r1.style.marginLeft="40%";
+          r1.style.marginRight="30%";
+          // r1.style.fontSize="2vw"
+
         r1.textContent="FLAWLESS VICTORY";
 
       }, delayInMilliseconds);
-      var seconds = 12000;
+      var seconds = 4000;
       setTimeout(function() {
       //your code to be executed after 1 second
 
@@ -152,7 +163,9 @@ var vic=document.querySelector("#victory");
   }
 }
 
-
+   var audio=document.getElementById("a1");
+   // audio.preload();
+   audio.currentTime=1;
 var mem=[2,2,2,2,2,2,2,2,2];
 var job=[2,2,2,2,2,2,2,2,2,2];
 var winner=[[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
@@ -162,7 +175,7 @@ num.forEach(i=>{
    if(k%2==0&&job[i]==2){
 
        t.style.display="block";
-       var audio=document.getElementById("a1");
+      audio.currentTime=0;
        audio.play();
        k++;
        mem[i]=3;
@@ -174,7 +187,8 @@ num.forEach(i=>{
   }
     else if(k%2!=0 &&job[i]==2) {
 
-  var audio=document.getElementById("a1");
+  // var audio=document.getElementById("a1");
+  audio.currentTime=0;
   audio.play();
   var a=w[i];
     t.style.display="none";
@@ -193,6 +207,9 @@ num.forEach(i=>{
 
 
 but1.addEventListener("click",function(){
+// player.play();
+player.pause();
+player.currentTime=0;
 num.forEach(i => {
   var cross=s[i];
   var dot=w[i];
