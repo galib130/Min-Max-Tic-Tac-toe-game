@@ -192,45 +192,82 @@ function mov()
 
 
 }
+var flag1=0;
+
+function semi(){
+
+    num.forEach(i=>{
+        pi[i].addEventListener("click",function(){
+          if(flag1==1){
+            var t=s[i];
+        if(k%2==0&&job[i]==2){
+
+           t.style.display="block";
+
+           audio.currentTime=0;
+            audio.play();
+            k++;
+            mem[i]=3;
+            job[i]=3;
+            result(3);
+
+      mov();
+
+       }
+          }
 
 
-num.forEach(i=>{
-    pi[i].addEventListener("click",function(){
-       var t=s[i];
-   if(k%2==0&&job[i]==2){
+      })
 
-       t.style.display="block";
-      audio.currentTime=0;
-       audio.play();
-       k++;
-       mem[i]=3;
-       job[i]=3;
-       result(3);
+    })
 
- mov()
-
-// console.log(tiktok);
   }
-  //   else if(k%2!=0 &&job[i]==2) {
-  //
-  // // var audio=document.getElementById("a1");
-  // audio.currentTime=0;
-  // audio.play();
-  // var a=w[i];
-  //   t.style.display="none";
-  //   a.style.display="block";
-  //
-  //   k++;
-  //   mem[i]=4;
-  //   job[i]=4;
-  //   result(4);
-  //
-  //   }
-  })
-
-})
 
 
+function multi(){
+
+
+    num.forEach(i=>{
+        pi[i].addEventListener("click",function(){
+      if(flag1==2){
+        var t=s[i];
+        console.log(k);
+        if(k%2==0&&job[i]==2){
+        var audio=document.getElementById("a1");
+        t.style.display="block";
+        audio.currentTime=0;
+         audio.play();
+        k++;
+        mem[i]=3;
+        job[i]=3;
+        result(3);
+        }
+
+        else if(k%2!=0 &&job[i]==2) {
+        console.log("hi2");
+        var audio=document.getElementById("a1");
+        audio.currentTime=0;
+        audio.play();
+        var a=w[i];
+        // t.style.display="none";
+        a.style.display="block";
+
+        k++;
+        mem[i]=4;
+        job[i]=4;
+        result(4);
+
+        }
+
+      }
+
+      })
+
+    })
+
+
+
+}
 
 
 but1.addEventListener("click",function(){
@@ -238,7 +275,7 @@ but1.addEventListener("click",function(){
 
 player.pause();
 player.currentTime=0;
-punk.play();
+// punk.play();
 num.forEach(i => {
   var cross=s[i];
   var dot=w[i];
@@ -252,6 +289,57 @@ num.forEach(i => {
 
 // player.pause();
 })
+
+var semipro=document.querySelector("#semipro");
+var multiplayer=document.querySelector("#multiplayer");
+
+semipro.addEventListener("click",function(){
+flag1=1;
+
+player.pause();
+player.currentTime=0;
+// punk.play();
+num.forEach(i => {
+  var cross=s[i];
+  var dot=w[i];
+  cross.style.display="none";
+  dot.style.display="none";
+  k=2;
+  mem[i]=2;
+  job[i]=2;
+    r1.style.visibility="hidden";
+});
+
+semi();
+
+console.log("semipro");
+
+
+})
+
+
+multiplayer.addEventListener("click",function(){
+// player.play();
+flag1=2;
+player.pause();
+player.currentTime=0;
+// punk.play();
+num.forEach(i => {
+  var cross=s[i];
+  var dot=w[i];
+  cross.style.display="none";
+  dot.style.display="none";
+  k=2;
+  mem[i]=2;
+  job[i]=2;
+    r1.style.visibility="hidden";
+});
+if(flag1==2)
+{multi();}
+console.log("multiplayer");
+// player.pause();
+})
+
 
 
 
