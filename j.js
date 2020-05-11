@@ -7,37 +7,7 @@ var player=document.getElementById("crowd");
 player.preload="auto";
 player.currentTime=0.1;
 player.volume=0.8;
-// player.loop="true";
 
-
-// function random()
-// {
-//   var letters="0123456789ABCDEF"
-//   var color='#';
-//   for(var i=0;i<6;i++)
-//   {
-//     color+=letters[Math.floor(Math.random()*16)];
-//
-//   }
-//   return color
-// }
-
-// function changeHeader()
-// {
-// colorInput=random()
-// header.style.color=colorInput;
-//  }
-//  setInterval("changeHeader()",200);
-//
-// head1.addEventListener("mouseover",function(){
-//
-//   head1.textContent="Mouse";
-//
-// })
-
-// head1.addEventListener("mouseout",function(){
-//   head1.textContent='First';
-// })
 
 
 
@@ -73,9 +43,10 @@ var k=2;
   var cs=0;
   var but1=document.querySelector("#button1");
   var html=document.querySelector(".html");
+  var punk=document.querySelector("#punk");
+
 function result(c)
-{
-  for(var y=0;y<8;y++)
+{ for(var y=0;y<8;y++)
   {
     var flag=0;
     for(var z=0;z<3;z++)
@@ -85,10 +56,13 @@ function result(c)
         flag++;
       }
     }
-        console.log(flag);
+        // console.log(flag);
     if(flag==3)
     {
-      if(c==3){console.log("red wins");
+      if(c==3){
+        punk.pause();
+        punk.currentTime=0;
+        console.log("red wins");
       r1.style.color="red";
       r1.style.marginLeft="44%";
       // r1.style.marginRight=auto;
@@ -118,14 +92,19 @@ vic.play();
       r1.style.visibility="visible";
       but1.textContent="Play Again?";
       break;}
-      else if(c==4)
-      {console.log("blue wins");
+
+else if(c==4)
+      {
+        punk.pause();
+        punk.currentTime=0;
+        console.log("blue wins");
 r1.style.color="blue";
   r1.style.marginLeft="45%";
 
   r1.style.marginRight="30%";
   // r1.style.fontSize="2vw"
       r1.textContent="CSS WINS";
+
 var vic=document.querySelector("#victory");
       var delayInMilliseconds = 3000;
       setTimeout(function() {
@@ -167,11 +146,57 @@ var vic=document.querySelector("#victory");
    // audio.preload();
    audio.currentTime=1;
 var mem=[2,2,2,2,2,2,2,2,2];
-var job=[2,2,2,2,2,2,2,2,2,2];
+var job=[5,2,2,2,2,2,2,2,2,2];
 var winner=[[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 const num=[1,2,3,4,5,6,7,8,9];
+
+function nextmove()
+{
+  var ran=[];
+  var count=0;
+for(var i=0;i<=9;i++)
+  {if(job[i]==2)
+  {
+    ran[count]=i;
+     count++;
+
+  }
+}
+var randomItem = ran[Math.floor(Math.random()*ran.length)];
+
+  console.log(ran);
+  console.log(randomItem);
+if(randomItem!=0)
+{return randomItem;}
+else {
+  nextmove();
+}
+
+
+}
+
+function mov()
+{
+  var gamemove=nextmove();
+  var audio=document.getElementById("a1");
+ audio.currentTime=0;
+ audio.play();
+ var a=w[gamemove];
+   // t.style.display="none";
+   a.style.display="block";
+
+   k++;
+   mem[gamemove]=4;
+   job[gamemove]=4;
+   result(4);
+
+
+}
+
+
 num.forEach(i=>{
-    pi[i].addEventListener("click",function(){ var t=s[i];
+    pi[i].addEventListener("click",function(){
+       var t=s[i];
    if(k%2==0&&job[i]==2){
 
        t.style.display="block";
@@ -182,25 +207,27 @@ num.forEach(i=>{
        job[i]=3;
        result(3);
 
+ mov()
 
-
+// console.log(tiktok);
   }
-    else if(k%2!=0 &&job[i]==2) {
-
-  // var audio=document.getElementById("a1");
-  audio.currentTime=0;
-  audio.play();
-  var a=w[i];
-    t.style.display="none";
-    a.style.display="block";
-
-    k++;
-    mem[i]=4;
-    job[i]=4;
-    result(4);
-
-    }
+  //   else if(k%2!=0 &&job[i]==2) {
+  //
+  // // var audio=document.getElementById("a1");
+  // audio.currentTime=0;
+  // audio.play();
+  // var a=w[i];
+  //   t.style.display="none";
+  //   a.style.display="block";
+  //
+  //   k++;
+  //   mem[i]=4;
+  //   job[i]=4;
+  //   result(4);
+  //
+  //   }
   })
+
 })
 
 
@@ -208,8 +235,10 @@ num.forEach(i=>{
 
 but1.addEventListener("click",function(){
 // player.play();
+
 player.pause();
 player.currentTime=0;
+punk.play();
 num.forEach(i => {
   var cross=s[i];
   var dot=w[i];
