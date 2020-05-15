@@ -390,6 +390,7 @@ var multiplayer=document.querySelector("#multiplayer");
 var unbeatable=document.querySelector("#unbeatable");
 semipro.addEventListener("click",function(){
 flag1=1;
+quiet=0;
 ht=0;
 cs=0;
   html.textContent=you+":"+ht+" "+opponent+":"+cs;
@@ -426,6 +427,7 @@ multiplayer.addEventListener("click",function(){
 // player.play();
 flag1=2;
 victory=0;
+quiet=0;
 ht=0;
 cs=0;
 html.textContent=you+":"+ht+" "+opponent+":"+cs;
@@ -646,6 +648,7 @@ unbeatable.addEventListener("click",function(){
   victory=0;
   ht=0;
   cs=0;
+  quiet=0;
   multiplayer.style.borderColor="Blue";
   multiplayer.style.borderWidth="thick";
   semipro.style.borderColor="Blue";
