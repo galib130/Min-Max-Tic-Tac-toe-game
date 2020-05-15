@@ -138,8 +138,11 @@ if(mu%2==0&&quiet==0)
 else {
   quiet=0;
 }
+// if(flag1==3&&quiet!=0)
+// {quiet=0;}
 
 },seconds);
+quiet=0;
       ht++;
       if(mu%2==0)
       {player.play();}
@@ -186,8 +189,11 @@ if(opponent.length>=4)
       else {
         quiet=0;
       }
+      // if(flag1==3&&quiet!=0)
+      // {quiet=0;}
 
       },seconds);
+      quiet=0;
       r1.style.visibility="visible";
       but1.textContent="Play Again?";
       if(mu%2==0)
@@ -372,8 +378,9 @@ num.forEach(i => {
 });
 if(flag1==3)
 {
-
+// quiet=0;
    world_class();
+
 }
 // player.pause();
 })
@@ -576,7 +583,7 @@ function beat_game()
 
   // console.log(position);
 
-  var audio=document.getElementById("a1");
+  // var audio=document.getElementById("a1");
   audio.currentTime=0;
   if(mu%2==0)
   {audio.play();}
@@ -649,6 +656,8 @@ unbeatable.addEventListener("click",function(){
   k=3;
   player.pause();
   player.currentTime=0;
+  vic.pause();
+  vic.currentTime=0;
   // punk.play();
 
 
