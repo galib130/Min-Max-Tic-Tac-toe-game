@@ -8,6 +8,7 @@ player.preload="auto";
 player.currentTime=0.1;
 player.volume=0.8;
 var vic=document.querySelector("#victory");
+var quiet=0;
 
 var mu=2;
 var mute=document.querySelector("#mute");
@@ -132,8 +133,11 @@ var seconds = 4000;
 setTimeout(function() {
 //your code to be executed after 1 second
 
-if(mu%2==0)
+if(mu%2==0&&quiet==0)
 {vic.play();}
+else {
+  quiet=0;
+}
 
 },seconds);
       ht++;
@@ -177,8 +181,11 @@ if(opponent.length>=4)
       setTimeout(function() {
       //your code to be executed after 1 second
 
-      if(mu%2==0)
+      if(mu%2==0&&quiet==0)
       {vic.play();}
+      else {
+        quiet=0;
+      }
 
       },seconds);
       r1.style.visibility="visible";
@@ -345,11 +352,14 @@ function multi(){
 
 but1.addEventListener("click",function(){
 // player.play();
-
+vic.pause();
+vic.currentTime=0;
 player.pause();
 player.currentTime=0;
+quiet=1;
 // punk.play();
 victory=0;
+
 num.forEach(i => {
   var cross=s[i];
   var dot=w[i];
