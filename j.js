@@ -208,6 +208,14 @@ if(opponent.length>=4)
     else {
 
       flag=0;
+          if(moveleft()==-1)
+      {
+        r1.style.marginLeft="46%";
+        r1.style.marginRight="24%";
+          r1.style.visibility="visible";
+            r1.textContent="ITS A TIE";
+
+      }
 
     }
   }
