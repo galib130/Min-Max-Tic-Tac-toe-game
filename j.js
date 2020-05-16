@@ -36,9 +36,13 @@ else {
 
 var me=prompt("Your Initials");
 var opo=prompt("Opponent initials");
+var correct1=me.replace(" ","_");
+var correct2=opo.replace(" ","_");
+console.log(correct1);
 
-var you=me.toUpperCase();
-var opponent=opo.toUpperCase();
+
+var you=correct1.toUpperCase();
+var opponent=correct2.toUpperCase();
 
 
 var s=[10];
@@ -76,9 +80,9 @@ var k=2;
   var punk=document.querySelector("#punk");
   html.style.visibility="visible";
 
-  if(opponent.length>=3)
+  if(opponent.length>=4)
   {
-    html.style.wordSpacing="855px";
+    html.style.wordSpacing="800px";
 
   }
   else {
