@@ -614,14 +614,14 @@ function beat_game()
 function world_class()
 {
 
-  var ar=w[1];
-   // t.style.display="none";
-   ar.style.display="block";
+//   var ar=w[1];
+//    // t.style.display="none";
+//    ar.style.display="block";
 
-   k=2;
-   mem[1]=4;
-   job[1]=4;
-  legend.forEach(i=>{
+//    k=2;
+//    mem[1]=4;
+//    job[1]=4;
+  num.forEach(i=>{
       k=2;
       pi[i].addEventListener("click",function(){
 
