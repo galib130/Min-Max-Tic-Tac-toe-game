@@ -36,8 +36,8 @@ else {
 
 var me=prompt("Your Initials");
 var opo=prompt("Opponent initials");
-var correct1=me.replace(" ","_");
-var correct2=opo.replace(" ","_");
+var correct1=me.split(' ').join('_');
+var correct2=opo.split(' ').join('_');
 console.log(correct1);
 
 
