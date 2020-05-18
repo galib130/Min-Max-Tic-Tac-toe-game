@@ -116,9 +116,9 @@ function result(c)
         console.log("red wins");
       r1.style.color="red";
       if(you.length>=4)
-        {r1.style.marginLeft="44.5%";}
+        {r1.style.marginLeft="42%";}
         else {
-          r1.style.marginLeft="46%";
+          r1.style.marginLeft="45%";
         }
       // r1.style.marginRight=auto;
 
@@ -164,9 +164,9 @@ else if(c==4)
         console.log("blue wins");
 r1.style.color="blue";
 if(opponent.length>=4)
-  {r1.style.marginLeft="44.5%";}
+  {r1.style.marginLeft="42%";}
   else {
-    r1.style.marginLeft="46%";
+    r1.style.marginLeft="45%";
   }
 
   r1.style.marginRight="30%";
