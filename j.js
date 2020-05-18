@@ -1,4 +1,4 @@
-// var header=document.querySelector("h1")
+// var header=document.querySelector("sh1")
 // var head1=document.querySelector("#pick")
 // var head2=document.querySelector("#pick2")
 // var head3=document.querySelector("#pick3")
