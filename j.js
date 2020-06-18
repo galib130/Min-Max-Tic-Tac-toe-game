@@ -44,7 +44,7 @@ var opo=prompt("Opponent initials");
 console.log(correct1);
 you=correct1.toUpperCase();
 opponent=correct2.toUpperCase();
-html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
+html.textContent=you+":"+ht+" "+opponent+":"+cs;
 })
 
 
@@ -53,15 +53,9 @@ var rango_flag=0;
 var rang=document.querySelector("#rango");
 var k=2;
 
-rang.addEventListener("click",function(){
-if(rango!=0)
-{rango_flag=1;
-rango--;
-html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
-}
 
 
-})
+
 var s=[10];
 s[0]=0;
  s[1]=document.querySelector("#im1");
@@ -106,7 +100,7 @@ var w=[10];
       html.style.wordSpacing="20px";
       console.log("hiya");
   }
-    html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
+    html.textContent=you+":"+ht+" "+opponent+":"+cs;
 
 var first_vic=0;
 var victory=0;
@@ -167,7 +161,7 @@ quiet=0;
       ht++;
       if(mu%2==0)
       {player.play();}
-    html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
+    html.textContent=you+":"+ht+" "+opponent+":"+cs;
       r1.style.visibility="visible";
       but1.textContent="Play Again?";
       break;}
@@ -220,7 +214,7 @@ if(opponent.length>=4)
       if(mu%2==0)
       {player.play();}
       cs++;
-      html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
+      html.textContent=you+":"+ht+" "+opponent+":"+cs;
 
       break;
       }
@@ -460,13 +454,13 @@ console.log("semipro");
 
 
 })
-function init(){flag1=2;
+flag1=2;
 victory=0;
 quiet=0;
 ht=0;
 cs=0;
 rango=5;
-html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
+html.textContent=you+":"+ht+" "+opponent+":"+cs;
 multiplayer.style.borderColor="Red";
 multiplayer.style.borderWidth="5px";
 semipro.style.borderColor="Blue";
@@ -486,11 +480,13 @@ num.forEach(i => {
   job[i]=2;
     r1.style.visibility="hidden";
 });
-}
-init();
 
 multi();
 console.log("multiplayer");
+
+
+
+
 
 multiplayer.addEventListener("click",function(){
 // player.play();
@@ -500,7 +496,7 @@ quiet=0;
 ht=0;
 cs=0;
 rango=5;
-html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
+html.textContent=you+":"+ht+" "+opponent+":"+cs;
 multiplayer.style.borderColor="Red";
 multiplayer.style.borderWidth="5px";
 semipro.style.borderColor="Blue";
