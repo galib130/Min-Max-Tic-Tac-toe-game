@@ -1,4 +1,4 @@
-// var header=document.querySelector("sh1")
+// var header=document.querySelector("h1")
 // var head1=document.querySelector("#pick")
 // var head2=document.querySelector("#pick2")
 // var head3=document.querySelector("#pick3")
@@ -32,19 +32,36 @@ else {
 
 
 })
-
-
+var correct1="";
+var correct2="";
+var you="";
+var opponent="";
+initials.addEventListener("click",function(){
 var me=prompt("Your Initials");
 var opo=prompt("Opponent initials");
-var correct1=me.split(' ').join('_');
-var correct2=opo.split(' ').join('_');
+ correct1=me.split(' ').join('_');
+ correct2=opo.split(' ').join('_');
 console.log(correct1);
+you=correct1.toUpperCase();
+opponent=correct2.toUpperCase();
+html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
+})
 
 
-var you=correct1.toUpperCase();
-var opponent=correct2.toUpperCase();
+var rango=5;
+var rango_flag=0;
+var rang=document.querySelector("#rango");
+var k=2;
+
+rang.addEventListener("click",function(){
+if(rango!=0)
+{rango_flag=1;
+rango--;
+html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
+}
 
 
+})
 var s=[10];
 s[0]=0;
  s[1]=document.querySelector("#im1");
@@ -65,7 +82,7 @@ var w=[10];
    w[l]=document.querySelector('#im1'+l);
  }
 // s1.bgColor="orange";
-var k=2;
+
 
   var pi=[10];
   for(var j=1;j<=9;j++)
@@ -82,14 +99,14 @@ var k=2;
 
   if(opponent.length>=4)
   {
-    html.style.wordSpacing="800px";
+    html.style.wordSpacing="20px";
 
   }
   else {
-      html.style.wordSpacing="900px";
+      html.style.wordSpacing="20px";
       console.log("hiya");
   }
-    html.textContent=you+":"+ht+" "+opponent+":"+cs;
+    html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
 
 var first_vic=0;
 var victory=0;
@@ -113,7 +130,7 @@ function result(c)
         victory=1;
         punk.pause();
         punk.currentTime=0;
-        console.log("red wins");
+        console.log("red  wins");
       r1.style.color="red";
       if(you.length>=4)
         {r1.style.marginLeft="42%";}
@@ -121,8 +138,8 @@ function result(c)
           r1.style.marginLeft="45%";
         }
       // r1.style.marginRight=auto;
-
-      r1.textContent=you+" "+ "WINS" //1 second
+      // r1.style.wordSpacing="5px"
+      r1.textContent=you+ " "+"WINS" //1 second
 
       var delayInMilliseconds = 3000;
 setTimeout(function() {
@@ -130,7 +147,7 @@ setTimeout(function() {
 
 
 // r1.style.marginRight="40%";
-r1.style.marginLeft="40%";
+r1.style.marginLeft="39%";
   r1.textContent="FLAWLESS VICTORY";
 }, delayInMilliseconds);
 var seconds = 4000;
@@ -150,7 +167,7 @@ quiet=0;
       ht++;
       if(mu%2==0)
       {player.play();}
-    html.textContent=you+":"+ht+" "+opponent+":"+cs;
+    html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
       r1.style.visibility="visible";
       but1.textContent="Play Again?";
       break;}
@@ -177,7 +194,7 @@ if(opponent.length>=4)
       var delayInMilliseconds = 3000;
       setTimeout(function() {
         //your code to be executed after 1 second
-          r1.style.marginLeft="40%";
+          r1.style.marginLeft="37%";
           r1.style.marginRight="30%";
           // r1.style.fontSize="2vw"
 
@@ -203,7 +220,7 @@ if(opponent.length>=4)
       if(mu%2==0)
       {player.play();}
       cs++;
-      html.textContent=you+":"+ht+" "+opponent+":"+cs;
+      html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
 
       break;
       }
@@ -212,7 +229,7 @@ if(opponent.length>=4)
     else {
 
       flag=0;
-          if(moveleft()==-1)
+      if(moveleft()==-1)
       {
         r1.style.marginLeft="46%";
         r1.style.marginRight="24%";
@@ -331,6 +348,12 @@ function multi(){
         mem[i]=3;
         job[i]=3;
         result(3);
+        if(rango_flag!=0)
+        {
+          k=2;
+          rango_flag--;
+
+        }
         if(first_vic==1)
         {
           first_vic=0;
@@ -355,6 +378,11 @@ function multi(){
         {
           first_vic=0;
         }
+        if(rango_flag!=0)
+        {
+          k=3;
+          rango_flag--;
+        }
         }
 
       }
@@ -377,7 +405,6 @@ player.currentTime=0;
 quiet=1;
 // punk.play();
 victory=0;
-
 num.forEach(i => {
   var cross=s[i];
   var dot=w[i];
@@ -433,7 +460,37 @@ console.log("semipro");
 
 
 })
+function init(){flag1=2;
+victory=0;
+quiet=0;
+ht=0;
+cs=0;
+rango=5;
+html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
+multiplayer.style.borderColor="Red";
+multiplayer.style.borderWidth="5px";
+semipro.style.borderColor="Blue";
+semipro.style.borderWidth="thick";
+unbeatable.style.borderColor="Blue";
+unbeatable.style.borderWidth="thick";
+player.pause();
+player.currentTime=0;
+// punk.play();
+num.forEach(i => {
+  var cross=s[i];
+  var dot=w[i];
+  cross.style.display="none";
+  dot.style.display="none";
+  k=2;
+  mem[i]=2;
+  job[i]=2;
+    r1.style.visibility="hidden";
+});
+}
+init();
 
+multi();
+console.log("multiplayer");
 
 multiplayer.addEventListener("click",function(){
 // player.play();
@@ -442,7 +499,8 @@ victory=0;
 quiet=0;
 ht=0;
 cs=0;
-html.textContent=you+":"+ht+" "+opponent+":"+cs;
+rango=5;
+html.textContent=you+":"+ht+" "+opponent+":"+cs+" "+"Rango1:"+rango;
 multiplayer.style.borderColor="Red";
 multiplayer.style.borderWidth="5px";
 semipro.style.borderColor="Blue";
@@ -468,14 +526,14 @@ console.log("multiplayer");
 // player.pause();
 })
 
- function moveleft()
+function moveleft()
 {
-  for(var u=1;u<=9;u++)
-  {
-    if(job[u]==2)
-    {return 1;}
-  }
-  return -1;
+ for(var u=1;u<=9;u++)
+ {
+   if(job[u]==2)
+   {return 1;}
+ }
+ return -1;
 }
 
 const sub_array=[0,1,2];
@@ -614,13 +672,13 @@ function beat_game()
 function world_class()
 {
 
-//   var ar=w[1];
-//    // t.style.display="none";
-//    ar.style.display="block";
-
-//    k=2;
-//    mem[1]=4;
-//    job[1]=4;
+  // var ar=w[1];
+  //  // t.style.display="none";
+  //  ar.style.display="block";
+  //
+  //  k=2;
+  //  mem[1]=4;
+  //  job[1]=4;
   num.forEach(i=>{
       k=2;
       pi[i].addEventListener("click",function(){
