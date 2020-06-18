@@ -484,8 +484,6 @@ num.forEach(i => {
 }
 init();
 
-multi();
-console.log("multiplayer");
 
 multiplayer.addEventListener("click",function(){
 // player.play();
