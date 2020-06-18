@@ -127,7 +127,7 @@ function result(c)
         console.log("red  wins");
       r1.style.color="red";
       if(you.length>=4)
-        {r1.style.marginLeft="42%";}
+        {r1.style.marginLeft="43%";}
         else {
           r1.style.marginLeft="45%";
         }
@@ -180,7 +180,7 @@ if(opponent.length>=4)
     r1.style.marginLeft="45%";
   }
 
-  r1.style.marginRight="30%";
+  // r1.style.marginRight="30%";
   // r1.style.fontSize="2vw"
       r1.textContent=opponent+" "+"WINS";
 
