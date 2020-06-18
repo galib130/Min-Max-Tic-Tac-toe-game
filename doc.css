@@ -54,7 +54,7 @@ section
   align-content: center;
 
   background:linear-gradient(-90deg,#eb2d2d,#37c4d4,#54e0f0,#23A6D5,#23D5AB);
-  /* background-color: grey ; */
+  /* background-color: grey; */
 
   background-size: 500% 500%;
   position: relative;
@@ -107,32 +107,32 @@ font-style:oblique;
   /* color: #99d8ea; */
 }
 
-/*ds*/
-#semipro,#mute
+
+#semipro,#mute,#rango,#initials
 {
-height: 5vh;
+height: 3.7rem;
 border-width: thick;
 border-radius: 20px;
 border-color: blue;
-width: 135px;
+width: 12rem;
 margin-top: 0.5%;
 margin-left: 3%;
-font-size: 16px;
+font-size: 1.5rem;
 text-align:center;
-font-weight: bolder;
+font-weight: 810;
 font-style: italic;
 }
 #multiplayer,#unbeatable
-{height: 5vh;
+{height: 3.7rem;
 border-width: thick;
 border-radius: 20px;
 border-color: blue;
-width: 135px;
+width: 12rem;
 margin-top: 0.5%;
 margin-left: 3%;
-font-size: 16px;
+font-size: 1.5rem;
 text-align:left;
-font-weight: bolder;
+font-weight:810;
 font-style: italic;
 
 }
