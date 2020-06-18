@@ -188,7 +188,7 @@ if(opponent.length>=4)
       var delayInMilliseconds = 3000;
       setTimeout(function() {
         //your code to be executed after 1 second
-          r1.style.marginLeft="37%";
+          r1.style.marginLeft="39%";
           r1.style.marginRight="30%";
           // r1.style.fontSize="2vw"
 
