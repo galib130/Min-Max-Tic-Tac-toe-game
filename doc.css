@@ -79,7 +79,7 @@ section
 }
 
 #Red,#Blue{
-  visibility:visible;
+  visibility:hidden;
   margin-left: 45%;
   margin-right: 30%;
   /* margin-right: 50%; */
