@@ -175,7 +175,7 @@ else if(c==4)
         console.log("blue wins");
 r1.style.color="blue";
 if(opponent.length>=4)
-  {r1.style.marginLeft="42%";}
+  {r1.style.marginLeft="43%";}
   else {
     r1.style.marginLeft="45%";
   }
