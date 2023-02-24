@@ -21,3 +21,7 @@ Background music is used when making moves or after a game is finished
 
 Css animation used for background
 
+Game is hosted on github pages.
+
+
+
