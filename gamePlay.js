@@ -1,7 +1,4 @@
-// var header=document.querySelector("h1")
-// var head1=document.querySelector("#pick")
-// var head2=document.querySelector("#pick2")
-// var head3=document.querySelector("#pick3")
+
 
 var player=document.getElementById("crowd");
 player.preload="auto";
@@ -75,7 +72,7 @@ var w=[10];
  {
    w[l]=document.querySelector('#im1'+l);
  }
-// s1.bgColor="orange";
+
 
 
   var pi=[10];
@@ -131,8 +128,7 @@ function result(c)
         else {
           r1.style.marginLeft="45%";
         }
-      // r1.style.marginRight=auto;
-      // r1.style.wordSpacing="5px"
+
       r1.textContent=you+ " "+"WINS" //1 second
 
       var delayInMilliseconds = 3000;
@@ -140,7 +136,6 @@ setTimeout(function() {
   //your code to be executed after 1 second
 
 
-// r1.style.marginRight="40%";
 r1.style.marginLeft="39%";
   r1.textContent="FLAWLESS VICTORY";
 }, delayInMilliseconds);
@@ -153,8 +148,6 @@ if(mu%2==0&&quiet==0)
 else {
   quiet=0;
 }
-// if(flag1==3&&quiet!=0)
-// {quiet=0;}
 
 },seconds);
 quiet=0;
@@ -168,7 +161,7 @@ quiet=0;
 
 else if(c==4)
       {
-        // first_vic=1;
+       
         victory=1;
         punk.pause();
         punk.currentTime=0;
@@ -180,8 +173,7 @@ if(opponent.length>=4)
     r1.style.marginLeft="45%";
   }
 
-  // r1.style.marginRight="30%";
-  // r1.style.fontSize="2vw"
+
       r1.textContent=opponent+" "+"WINS";
 
 
@@ -190,7 +182,7 @@ if(opponent.length>=4)
         //your code to be executed after 1 second
           r1.style.marginLeft="39%";
           r1.style.marginRight="30%";
-          // r1.style.fontSize="2vw"
+      
 
         r1.textContent="FLAWLESS VICTORY";
 
@@ -204,8 +196,7 @@ if(opponent.length>=4)
       else {
         quiet=0;
       }
-      // if(flag1==3&&quiet!=0)
-      // {quiet=0;}
+
 
       },seconds);
       quiet=0;
@@ -552,10 +543,7 @@ for(var i=0;i<8;i++)
       human++;
     }
   }
-  // if(taken==3)
-  // {console.log(
-  //   human+" "+job
-  // );}
+
   if(gamer==3)
   {
     return 1;
@@ -572,17 +560,16 @@ if(moveleft()==-1)
 return -2;
 }
 
-// var theta=k;
+
 var score=0;
 var taken=0;
-// var depth;
+
  function minimax(job,theta)
 {
 
 
    score=evaluate(job);
-   // if(taken==3)
-   //  console.log(score+"hi"+job);
+
   if(score==1||score==-1||score==0)
   return score;
  if(theta==3)
@@ -596,19 +583,18 @@ var taken=0;
           mem[j]=4;
 
           best1=Math.max(minimax(job,2),best1);
-  // console.log(best1);
+
           job[j]=2;
           mem[j]=2;
 
         }
 
       }
-       // console.log(best1);
 return best1;
   }
   else {
     let best2=10000;
-    // console.log("hi");
+ 
     for(var j=1;j<=9;j++)
     {
       if(job[j]==2)
@@ -616,13 +602,13 @@ return best1;
         job[j]=3;
         mem[j]=3;
         best2=Math.min(minimax(job,3),best2);
-         // console.log(best);
+       
          job[j]=2;
          mem[j]=2;
       }
 
     }
-     // console.log(best2);
+   
 return best2;
   }
 }
@@ -637,7 +623,7 @@ function beat_game()
     {
       job[j]=4;
       possible_result=minimax(job,2);
-      // console.log(possible_result);
+  
      job[j]=2;
      if(possible_result>bestval)
      {
@@ -649,14 +635,12 @@ function beat_game()
 
 
 
-  // console.log(position);
 
-  // var audio=document.getElementById("a1");
   audio.currentTime=0;
   if(mu%2==0)
   {audio.play();}
   var a=w[position];
-   // t.style.display="none";
+
    a.style.display="block";
 
    k=2;
@@ -668,13 +652,7 @@ function beat_game()
 function world_class()
 {
 
-  // var ar=w[1];
-  //  // t.style.display="none";
-  //  ar.style.display="block";
-  //
-  //  k=2;
-  //  mem[1]=4;
-  //  job[1]=4;
+
   num.forEach(i=>{
       k=2;
       pi[i].addEventListener("click",function(){
@@ -727,7 +705,7 @@ unbeatable.addEventListener("click",function(){
   player.currentTime=0;
   vic.pause();
   vic.currentTime=0;
-  // punk.play();
+
 
 
   num.forEach(i => {
@@ -742,29 +720,10 @@ unbeatable.addEventListener("click",function(){
   });
      if(flag1==3)
       {world_class();}
-  // console.log("world_class");
+  
 
 })
 
 var flag=0;
 var j=0;
-// for(var i=0;i<8;i++)
-// {
-//
-//    if(mem[winner[i][j]]==mem[winner[i][j+1]]&&mem[winner[i][j]]==mem[winner[i][j+2]] && mem[i][j]!=2)
-//    {
-//    console.log("Game Over");
-//    if(mem[winner[i][j]]=='3')
-//    {
-//      console.log("Html wins");
-//    }
-//    if(mem[winner[i][j]]=='4')
-//    {
-//      console.log("CSS wins");
-//    }
-//    mem=[];
-//
-//
-//    }
-//
-// }
+
